@@ -1,0 +1,16 @@
+<h4><a href="{% url 'list' %}">뒤로가기</a></h4>
+<h4>제목 : {{ post.title }}</h4>
+<h4>내용 : {{ post.content }}</h4>
+
+{% if scrap %}
+    <a href="{% url 'scrap' post.id %}">스크랩 취소</a>
+{% else %}
+    <a href="{% url 'scrap' post.id %}">스크랩</a>
+
+{% endif %}
+
+{% if like %}
+    <a href="{% url 'like' post.id %}">좋아요 취소</a>
+{% else %}
+    <a href="{% url 'like' post.id %}">좋아요 </a>
+{% endif %}
